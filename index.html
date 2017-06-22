@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Quotes</title>
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css">
   <script src="https://unpkg.com/vue"></script>
+  <title>Quotes</title>
 </head>
 <body>
-  <div id="app">
-    <ul>
-      <em>{{quotes[show].text}}</em> - <strong>{{quotes[show].author}}</strong>
-    </ul>
-    <button v-on:click="oneQuote">Quote</button>
+
+  <div class="container-fluid">
+    <div class="row">
+      
+      <div id="app">
+        <ul id="quotes">
+          <div class="fa fa-quote-left"></div>
+            <em>{{quotes[show].text}}</em>
+          <div class="fa fa-quote-right"></div>
+          
+        </ul>
+
+        <div class="quote-auther">
+          - <strong>{{quotes[show].author}}</strong>
+        </div>  
+
+        <div class="quote-button">
+          <button type="button" class="btn btn-primary" v-on:click="oneQuote">Quote</button>
+        </div>
+        
+      </div>
+
+    </div>  
   </div>
+
+
 
   <script>
     var app = new Vue({
