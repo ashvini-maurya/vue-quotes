@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quotes</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <ol>
+      <li v-for="quote in quotes">
+        {{ quote.text }}
+    </ol>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        quotes: [
+          { text: "That's one small step for a man, one giant leap for mankind - Neil Armstrong" },
+          { text: "The Universe is under no obligation to make sense to you - Neil deGrasse Tyson" },
+          { text: "I would like to die on Mars. Just not on impact - Elon Musk" },
+          { text: "If we can conquer space, we can conquer childhood hunger - Buzz Aldrin" },
+          { text: "The eternal silence of these infinite spaces frightens me - Blaise Pascal" }
+        ]
+      }
+    })
+  </script>
+</body>
+</html>
