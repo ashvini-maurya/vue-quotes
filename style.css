@@ -1,6 +1,6 @@
-/*body {
-    background-color: lightblue;
-}*/
+body {
+    background: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/retina_wood.png');
+}
 
 .blue-text {
     color: blue;
@@ -18,6 +18,12 @@ h1 {
     height: 180px;
     margin-top: 15%;
     border-radius: 1%;
+    background-color: white;
+    transition: width 2s;
+}
+
+#app:hover {
+    max-width: 50%;
 }
 
 #quotes {
@@ -32,7 +38,13 @@ h1 {
     text-align: right;
 }
 
-.quote-button {
+.next {
+    margin-right: 15px;
+    margin-top: 15px;
+    float: right;
+}
+
+.previous {
     margin-right: 15px;
     margin-top: 15px;
     float: right;

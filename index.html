@@ -2,9 +2,9 @@
 <html>
 <head>
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://unpkg.com/vue"></script>
   <title>Quotes</title>
 </head>
@@ -14,19 +14,24 @@
     <div class="row">
       
       <div id="app">
-        <ul id="quotes">
+        <div id="quotes">
           <div class="fa fa-quote-left"></div>
             <em>{{quotes[show].text}}</em>
           <div class="fa fa-quote-right"></div>
           
-        </ul>
+        </div>
 
         <div class="quote-auther">
           - <strong>{{quotes[show].author}}</strong>
         </div>  
 
-        <div class="quote-button">
-          <button type="button" class="btn btn-primary" v-on:click="oneQuote">Quote</button>
+        
+        <div class="next">
+          <button type="button" class="btn btn-primary" v-on:click="nextQuote">Next</button>
+        </div>
+
+        <div class="previous">
+          <button type="button" class="btn btn-primary" v-on:click="previousQuote">Previous</button>
         </div>
         
       </div>
@@ -50,8 +55,11 @@
         show: 0, 
       },
       methods: {
-        oneQuote: function () {
+        nextQuote: function () {
           app.show = (app.show + 1) % app.quotes.length
+        },
+        previousQuote: function () {
+          app.show = (app.show - 1 + app.quotes.length) % app.quotes.length
         }
       }
     })
