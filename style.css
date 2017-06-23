@@ -19,7 +19,7 @@ h1 {
     margin-top: 15%;
     border-radius: 1%;
     background-color: white;
-    transition: width 2s;
+    transition: max-width 4s;
 }
 
 #app:hover {
